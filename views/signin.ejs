@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include('includes/head') %>
+
+<body>
+
+    <%-include('includes/navigation')%>
+
+    <main>
+        <form class="product-form" action="/" method="POST">
+            <div><h2>SignIN Page</h2></div>
+                <div class="form-control">
+                    <label for="userName">Username</label>
+                    <input type="text" name="userName" id="userName"/>
+
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password"/>
+                </div>
+            </div>
+            <% if (error) { %>
+                <div class="error"><%=errMsg%></div>
+            <% } %>
+            <button class="btn" type="submit">Login</button>
+        </form>
+    </main>
+</body>
+
+</html>

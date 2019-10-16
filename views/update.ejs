@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%-include('includes/head') %>
+
+<body>
+
+    <%-include('includes/navigation') %>
+
+    <main>
+        
+            <form class="product-form" action="/update/<%=user._id %>" method="POST">
+                <div><h2>Update User Info</h2></div>
+                <div class="form-control">
+                    
+                    <input type="hidden" name="mongoId" id="mongoId" value="<%=user._id %>"/>
+
+                    <label for="id">UserId</label>
+                    <input type="text" name="id" id="id" value="<%= user.id %>"/>
+      
+                    <label for="login">user</label>
+                    <input type="text" name="login" id="login" value="<%= user.login %>"/>
+
+                    <label for="type">type</label>
+                    <input type="text" name="type" id="type" value="<%= user.type %>"/>
+
+                    <label for="site_admin">site_admin</label>
+                    <input type="text" name="site_admin" id="site_admin" value="<%= user.site_admin %>"/>
+
+                </div>
+
+                <button class="btn" type="submit">Update</button>
+            </form>
+        
+    </main>
+</body>
+
+</html>

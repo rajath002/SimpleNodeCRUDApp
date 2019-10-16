@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%-include('includes/head') %>
+
+<body>
+
+    <%-include('includes/navigation') %>
+
+    <main>
+        <form class="product-form" action="/signup" method="POST">
+            <div><h2>Update Page</h2></div>
+            <div class="form-control">
+                <label for="username">Username</label>
+                <% if (usernamePresent) { %>
+                    <input type="text" name="username" id="username" value="<%= username %>"/>
+                <% } else { %>
+                    <input type="text" name="username" id="username"/>
+                <% } %>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password"/>
+
+                <label for="cPassword">Confirm Password</label>
+                <input type="password" name="cPassword" id="cPassword"/>
+
+            </div>
+            <% if (error) { %>
+                <div class="error"><%=errMsg%></div>
+            <% } %>
+            <button class="btn" type="submit">SignUp</button>
+        </form>
+    </main>
+</body>
+
+</html>

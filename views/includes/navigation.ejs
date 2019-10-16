@@ -1,0 +1,20 @@
+<header class="main-header">
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <% if( pageTitle == 'signin' ) {%>
+            <li class="main-header__item"><a href="/signup">Signup</a></li>
+            <% } %>
+            <% if( pageTitle == 'signup' ) {%>
+            <li class="main-header__item"><a href="/">SignIn</a></li>
+            <% } %>
+            <% if( pageTitle == 'update' ) {%>
+                <li class="main-header__item"><a href="/users">Users</a></li>
+            <% } %>
+            <% if( pageTitle == 'users' || pageTitle == 'update' ) {%>
+            <li class="main-header__item"><a href="/">LOGOUT</a></li>
+            <% } %>
+            
+            <!-- <li class="main-header__item"><a class="active" href="/admin/add-product">Add Product</a></li> -->
+        </ul>
+    </nav>
+</header>
