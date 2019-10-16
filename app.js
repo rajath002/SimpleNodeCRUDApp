@@ -27,6 +27,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', require(path.join(__dirname, "routes", "auth.v1.route.js")));
 
+app.use((req, res, next) => {
+    res.status(404).render('404', {pageTitle: 'Page NOT FOUND'});
+});
 app.listen(3000, () => {
     console.log("Node app is listening on port : ", port);
 });
